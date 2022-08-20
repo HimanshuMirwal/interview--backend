@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const Courses = require("./models/courses")
 const ModelDiscussions = require("./models/Discussion")
 const ModelUser =  require("./models/user")
-mongoose.connect("mongodb+srv://admin-himanshu:test123@cluster0.qewzz.mongodb.net/Practice?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
     console.log("database connected")
 }).catch(Err=>console.log("Error", Err))
